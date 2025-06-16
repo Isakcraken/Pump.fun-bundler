@@ -1,4 +1,4 @@
-# pumpfun-bundler
+# Pumpfun-bundler
 An open-source #Solana #Bundler for #Pump.Fun that enables you to create a token and package it with 25 purchases.
 
 Introducing the Open-Source Pump.Fun Bundler – the ultimate tool for seamless bundling on Pump.Fun, complete with advanced profile creation and anti-bubble map features!
