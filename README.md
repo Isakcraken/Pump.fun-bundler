@@ -32,4 +32,4 @@ Buy bundle: https://explorer.jito.wtf/bundle/4f1f4d21b0f5e3d5ca3311abeec64c35931
 Unlock even more tools and functionalities designed to streamline your launches and maximize your profits on Pump.Fun.
 
 ## Contact Info
-[Telegram](https://t.me/m4rcu5sol)
+[Telegram](https://t.me/pup5ol)
