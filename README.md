@@ -34,4 +34,4 @@ Unlock even more tools and functionalities designed to streamline your launches 
 ## Contact Info
 
 For stelth bundling - avoid bubble map, contact me
-[Telegram](https://t.me/m4rcu5sol)
+[Telegram](https://t.me/idioRusty)
