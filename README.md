@@ -1,37 +1,89 @@
-# Pumpfun-bundler
-An open-source #Solana #Bundler for #Pump.Fun that enables you to create a token and package it with 25 purchases.
+# 🔥 PumpFun Bundler – Open-Source Solana Bundler for Pump.fun Token Launches
 
-Introducing the Open-Source Pump.Fun Bundler – the ultimate tool for seamless bundling on Pump.Fun, complete with advanced profile creation and anti-bubble map features!
+A powerful, open-source **Pumpfun Bundler** designed for creators who want to launch tokens on **Pump.fun** using advanced bundling, Jito integration, randomized wallet profiles, and anti–bubble map protection.  
+Built for seamless, automated token launches that are **bubble map–proof** and **Photon SB–mark resistant**.
 
-This free, open-source solution provides an efficient self-bundling script for Pump.Fun, allowing you to launch tokens using 20 unique wallets and profiles.
+Optimized to rank highly for:  
+**pumpfun bundler • solana pumpfun bot • pumpfun token bundler • solana bundler • jito bundler • pump.fun automation**
 
-Achieve launches that are fully bubble map-proof and resistant to Photon SB marks.
+---
 
-## Example
+## 🚀 Overview
 
-Buy bundle: https://explorer.jito.wtf/bundle/4f1f4d21b0f5e3d5ca3311abeec64c35931f9170a843d267dafbafa7783d5f69
+Introducing the **Open-Source PumpFun Bundler** — the most advanced tool for creating tokens and bundling them with **up to 25 purchases** using generated buyer wallets, custom profiles, and onchain optimization tools.
 
-## Features
-### Intuitive User Interface
-💊 Effortless Navigation: Enjoy a user-friendly, fully automated interface designed to maximize efficiency and ease of use.
-### Sophisticated Profile Generation
-🧑 Randomized Profiles: Automatically create unique profiles for each wallet, ensuring authenticity with wallets holding diverse random tokens.
-### Custom LUT Optimization
-🔥 Tailored Look-Up Table (LUT): Optimize your launch strategies using our bespoke LUT program, designed for precision and performance.
-### Automated Supply Management
-🚨 Smart Supply Deviation: Effortlessly manage supply deviations to ensure smooth and efficient token launches.
-### Configurable Buyer Setup
-🔔 Personalized Buyers: Configure up to 20 unique keypair buyers to tailor your launch strategies to your goals.
-### Exceptional Performance
-🤖 Speed and Stability: Experience industry-leading performance, reliability, and speed with our advanced tool.
-### Integrated Onchain Program
-📂 Onchain Functionality: Utilize our custom onchain program for seamless integration and enhanced operations.
-### Advanced Selling Strategies
-💸 Dynamic Sell Strategies: Execute complex percentage-based sell strategies across all keypairs simultaneously for optimal results.
-### Additional Features
-Unlock even more tools and functionalities designed to streamline your launches and maximize your profits on Pump.Fun.
+Whether you're launching meme tokens, experimenting with bundling strategies, or building custom Pump.fun tooling, this bundler provides unmatched flexibility and stealth.
 
-## Contact Info
+---
 
-For stelth bundling - avoid bubble map, contact me
-[Telegram](https://t.me/idioRusty)
+## 🧪 Example
+
+**Buy Bundle:**  
+https://explorer.jito.wtf/bundle/4f1f4d21b0f5e3d5ca3311abeec64c35931f9170a843d267dafbafa7783d5f69
+
+---
+
+## 🔥 Features
+
+### 🖥 Intuitive User Interface  
+💊 Simple, automated UI designed for fast and reliable bundling workflows.
+
+---
+
+### 🧑‍🚀 Sophisticated Profile Generation  
+- Automatically creates **unique profiles** per wallet  
+- Each wallet holds randomized tokens to appear *authentic*  
+- Helps avoid bubble map clustering
+
+---
+
+### 🗂 Custom Look-Up Table (LUT) Program  
+- 🔥 Optimized LUT functionality for ultra-efficient transaction packing  
+- Boosts performance during high-load bundling  
+
+---
+
+### 🏦 Automated Supply Management  
+- Smart supply deviation correction  
+- Ensures smoother launches and reduces launch failures  
+
+---
+
+### 👥 Configurable Buyer Setup  
+- Create up to **20 randomized buyer keypairs**  
+- Fully customizable purchase behavior  
+
+---
+
+### ⚡ Exceptional Performance  
+- Lightning-fast bundling  
+- High stability under load  
+- Designed to outperform standard Pumpfun tools  
+
+---
+
+### 📂 Integrated Onchain Program  
+- Custom Solana program handles bundling logic  
+- Improves reliability & execution flow  
+
+---
+
+### 💸 Advanced Selling Strategies  
+- Execute percentage-based selling across all keypairs  
+- Automates multi-wallet exit strategies  
+
+---
+
+### 🧰 Additional Features  
+Unlock further automation & stealth tools to maximize efficiency when launching on Pump.fun.
+
+---
+
+## 📞 Contact Info
+
+For **stealth bundling** and **bubble map–avoidance tools**, contact:  
+**Telegram:** https://t.me/idioRusty
+
+---
+
+⭐ If this project helps you, please **Star** and **Fork** the repo!  
