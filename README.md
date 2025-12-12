@@ -82,7 +82,7 @@ Unlock further automation & stealth tools to maximize efficiency when launching 
 ## 📞 Contact Info
 
 For **stealth bundling** and **bubble map–avoidance tools**, contact:  
-**Telegram:** https://t.me/idioRusty
+**Telegram:** [RRR](https://t.me/microRustyme)
 
 ---
 
