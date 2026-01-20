@@ -1,46 +1,42 @@
-# Polymarket Arbitrage Bot - Arbitrage Opportunities on Prediction Markets
+# Polymarket Arbitrage Bot (YES/NO Risk-Free Arbitrage)
 
-Polymarket arbitrage bot - automated detection and execution of risk-free arbitrage opportunities on prediction markets.
+A **high-performance Polymarket Arbitrage Bot** built with **Python** that automatically detects and exploits **risk-free YES/NO arbitrage opportunities** on Polymarket markets when the combined prices fall below $1.00.
 
-Status: Live trading enabled. Dashboard available at configured domain.
+This repository is optimized for developers, quantitative traders, and researchers looking to understand or deploy **Polymarket arbitrage strategies** with configurable thresholds, fast market scanning, and clean architecture.
 
-Read article here: https://runesats.medium.com/high-roi-polymarket-arbitrage-in-2026-programmatic-dutch-book-strategies-bots-and-portfolio-5dbaf708f5a2
+---
 
-## Strategy
+## 🔍 What Is Polymarket Arbitrage?
 
-Strategy is Not for sale but going to share it to customers.
+On Polymarket, each binary market resolves to **$1.00** for the correct outcome.  
+If **YES price + NO price < $1.00**, both sides can be bought to guarantee profit.
 
-📞 Support: https://t.me/runesats
+### Example
+- YES: $0.48  
+- NO: $0.49  
+- Total cost: $0.97  
+- Payout on resolution: $1.00  
+- **Guaranteed profit: $0.03 per share**
 
-Pure arbitrage: when YES + NO token prices sum to less than $1.00, buy both. One token always pays out $1.00, guaranteeing profit regardless of outcome.
+---
 
-```
-Example:
-YES @ $0.48 + NO @ $0.49 = $0.97 cost
-Payout = $1.00 (guaranteed)
-Profit = $0.03 per dollar (3.09%)
-```
+## 🚀 Key Features
 
-## Status
+- ⚡ Real-time market monitoring (Socket + polling)
+- 🔎 Automatic detection of YES/NO mispricing
+- 🧮 Profit & position tracking
+- 🧠 Configurable arbitrage thresholds
+- 📊 Multi-market support (BTC, ETH, SOL, XRP, etc.)
+- 🧱 Clean modular architecture
+- 📝 Detailed logging & statistics
+- 🧪 Safe simulation mode (no real trades by default)
+- 🐍 Python implementation available
 
-Live trading enabled. Dashboard available at configured domain.
-
-## Features
-
-- Real-time WebSocket price monitoring (6 parallel connections, up to 1500 markets)
-- Automatic arbitrage detection and execution
-- **Low-latency async order execution** (native async HTTP with HTTP/2, parallel order signing)
-- Order monitoring with 10-second timeout and auto-cancellation
-- Market filtering by liquidity ($10k+ default) and resolution date (7 days default)
-- Web dashboard with live order visibility (HTTPS with auto SSL)
-- Slack notifications for trades
-- SOCKS5 proxy support for geo-restricted order placement
-
-## Setup
+## 📦 Installation
 
 ```bash
 # Clone
-git clone https://github.com/runesatsdev/polymarket-arbitrage-bot.git
+git clone https://github.com/m4rcu5o/polymarket-trading-bot.git
 cd rarb
 
 # Install dependencies
@@ -68,9 +64,11 @@ python scripts/approve_usdc.py
 rarb run --live --realtime
 ```
 
-## Configuration
+---
 
-Required environment variables:
+## ⚙️ Configuration
+
+Create your environment file:
 
 ```bash
 # Wallet
@@ -94,45 +92,54 @@ DRY_RUN=true                         # Set to false for live trading
 DASHBOARD_USERNAME=admin
 DASHBOARD_PASSWORD=...
 ```
+---
 
-See `.env.example` for all available options.
+## 🧪 Simulation Mode (Default)
 
-## Contract Approvals
+This bot **does not place real trades by default**.  
+All detected arbitrage opportunities are logged.
 
-Before trading, you must approve Polymarket's smart contracts to spend your USDC.e:
+To enable real trading:
+1. Add Polymarket API credentials to `.env`
+2. Implement order signing logic
+3. Test with small position sizes
 
-```bash
-# Run the approval script (requires PRIVATE_KEY in environment)
-python scripts/approve_usdc.py
-```
+---
 
-This approves:
-- CTF Exchange
-- Neg Risk Exchange
-- Conditional Tokens
-- Neg Risk Adapter
-
-## Geo-Restrictions
+## 🧠 Geo-Restrictions
 
 Polymarket blocks US IP addresses for order placement. The recommended architecture:
+- Bot server (us-east-1): Low-latency WebSocket connection for price monitoring
+- Proxy server (ca-central-1 Montreal): SOCKS5 proxy for order placement
 
-- **Bot server (us-east-1)**: Low-latency WebSocket connection for price monitoring
-- **Proxy server (ca-central-1 Montreal)**: SOCKS5 proxy for order placement
-
-Configure the proxy in your `.env`:
+Configure the proxy in your
 ```bash
 SOCKS5_PROXY_HOST=your-proxy-ip
 SOCKS5_PROXY_PORT=1080
 SOCKS5_PROXY_USER=rarb
 SOCKS5_PROXY_PASS=your-password
 ```
+---
 
-See `infra/` for OpenTofu + Ansible deployment scripts.
+## 🐍 Python Version
 
-## Documentation
+A fully updated Python implementation is available:
 
-See [PRD.md](PRD.md) for full product requirements and technical architecture.
+```bash
+git checkout python_version
+```
 
-## License
+---
 
-MIT
+## ⚠️ Risk Disclaimer
+
+- Arbitrage windows are extremely short
+- Slippage & latency may eliminate profit
+- Market conditions change rapidly
+- Always test before deploying real capital
+
+---
+
+## 📬 Contact
+
+[Telegram](https://t.me/microRustyme)
