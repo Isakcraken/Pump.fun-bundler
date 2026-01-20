@@ -1,89 +1,138 @@
-# 🔥 PumpFun Bundler – Open-Source Solana Bundler for Pump.fun Token Launches
+# Polymarket Arbitrage Bot - Arbitrage Opportunities on Prediction Markets
 
-A powerful, open-source **Pumpfun Bundler** designed for creators who want to launch tokens on **Pump.fun** using advanced bundling, Jito integration, randomized wallet profiles, and anti–bubble map protection.  
-Built for seamless, automated token launches that are **bubble map–proof** and **Photon SB–mark resistant**.
+Polymarket arbitrage bot - automated detection and execution of risk-free arbitrage opportunities on prediction markets.
 
-Optimized to rank highly for:  
-**pumpfun bundler • solana pumpfun bot • pumpfun token bundler • solana bundler • jito bundler • pump.fun automation**
+Status: Live trading enabled. Dashboard available at configured domain.
 
----
+Read article here: https://runesats.medium.com/high-roi-polymarket-arbitrage-in-2026-programmatic-dutch-book-strategies-bots-and-portfolio-5dbaf708f5a2
 
-## 🚀 Overview
+## Strategy
 
-Introducing the **Open-Source PumpFun Bundler** — the most advanced tool for creating tokens and bundling them with **up to 25 purchases** using generated buyer wallets, custom profiles, and onchain optimization tools.
+Strategy is Not for sale but going to share it to customers.
 
-Whether you're launching meme tokens, experimenting with bundling strategies, or building custom Pump.fun tooling, this bundler provides unmatched flexibility and stealth.
+📞 Support: https://t.me/runesats
 
----
+Pure arbitrage: when YES + NO token prices sum to less than $1.00, buy both. One token always pays out $1.00, guaranteeing profit regardless of outcome.
 
-## 🧪 Example
+```
+Example:
+YES @ $0.48 + NO @ $0.49 = $0.97 cost
+Payout = $1.00 (guaranteed)
+Profit = $0.03 per dollar (3.09%)
+```
 
-**Buy Bundle:**  
-https://explorer.jito.wtf/bundle/4f1f4d21b0f5e3d5ca3311abeec64c35931f9170a843d267dafbafa7783d5f69
+## Status
 
----
+Live trading enabled. Dashboard available at configured domain.
 
-## 🔥 Features
+## Features
 
-### 🖥 Intuitive User Interface  
-💊 Simple, automated UI designed for fast and reliable bundling workflows.
+- Real-time WebSocket price monitoring (6 parallel connections, up to 1500 markets)
+- Automatic arbitrage detection and execution
+- **Low-latency async order execution** (native async HTTP with HTTP/2, parallel order signing)
+- Order monitoring with 10-second timeout and auto-cancellation
+- Market filtering by liquidity ($10k+ default) and resolution date (7 days default)
+- Web dashboard with live order visibility (HTTPS with auto SSL)
+- Slack notifications for trades
+- SOCKS5 proxy support for geo-restricted order placement
 
----
+## Setup
 
-### 🧑‍🚀 Sophisticated Profile Generation  
-- Automatically creates **unique profiles** per wallet  
-- Each wallet holds randomized tokens to appear *authentic*  
-- Helps avoid bubble map clustering
+```bash
+# Clone
+git clone https://github.com/runesatsdev/polymarket-arbitrage-bot.git
+cd rarb
 
----
+# Install dependencies
+pip install -e .
 
-### 🗂 Custom Look-Up Table (LUT) Program  
-- 🔥 Optimized LUT functionality for ultra-efficient transaction packing  
-- Boosts performance during high-load bundling  
+# Configure
+cp .env.example .env
+# Edit .env with your settings
 
----
+# Generate Polymarket API credentials
+python -c "
+from py_clob_client.client import ClobClient
+import os
+client = ClobClient('https://clob.polymarket.com', key=os.environ['PRIVATE_KEY'], chain_id=137)
+creds = client.create_or_derive_api_creds()
+print(f'POLY_API_KEY={creds.api_key}')
+print(f'POLY_API_SECRET={creds.api_secret}')
+print(f'POLY_API_PASSPHRASE={creds.api_passphrase}')
+"
 
-### 🏦 Automated Supply Management  
-- Smart supply deviation correction  
-- Ensures smoother launches and reduces launch failures  
+# Approve Polymarket contracts (one-time setup)
+python scripts/approve_usdc.py
 
----
+# Run
+rarb run --live --realtime
+```
 
-### 👥 Configurable Buyer Setup  
-- Create up to **20 randomized buyer keypairs**  
-- Fully customizable purchase behavior  
+## Configuration
 
----
+Required environment variables:
 
-### ⚡ Exceptional Performance  
-- Lightning-fast bundling  
-- High stability under load  
-- Designed to outperform standard Pumpfun tools  
+```bash
+# Wallet
+PRIVATE_KEY=0x...                    # Your wallet private key
+WALLET_ADDRESS=0x...                 # Your wallet address
 
----
+# Polymarket L2 API Credentials (generate with script above)
+POLY_API_KEY=...
+POLY_API_SECRET=...
+POLY_API_PASSPHRASE=...
 
-### 📂 Integrated Onchain Program  
-- Custom Solana program handles bundling logic  
-- Improves reliability & execution flow  
+# Trading Parameters
+MIN_PROFIT_THRESHOLD=0.005           # 0.5% minimum profit
+MAX_POSITION_SIZE=100                # Max $100 per trade
+MIN_LIQUIDITY_USD=10000              # $10k minimum market liquidity
+MAX_DAYS_UNTIL_RESOLUTION=7          # Skip markets resolving later
+NUM_WS_CONNECTIONS=6                 # WebSocket connections (250 markets each)
+DRY_RUN=true                         # Set to false for live trading
 
----
+# Dashboard (optional - omit for no auth)
+DASHBOARD_USERNAME=admin
+DASHBOARD_PASSWORD=...
+```
 
-### 💸 Advanced Selling Strategies  
-- Execute percentage-based selling across all keypairs  
-- Automates multi-wallet exit strategies  
+See `.env.example` for all available options.
 
----
+## Contract Approvals
 
-### 🧰 Additional Features  
-Unlock further automation & stealth tools to maximize efficiency when launching on Pump.fun.
+Before trading, you must approve Polymarket's smart contracts to spend your USDC.e:
 
----
+```bash
+# Run the approval script (requires PRIVATE_KEY in environment)
+python scripts/approve_usdc.py
+```
 
-## 📞 Contact Info
+This approves:
+- CTF Exchange
+- Neg Risk Exchange
+- Conditional Tokens
+- Neg Risk Adapter
 
-For **stealth bundling** and **bubble map–avoidance tools**, contact:  
-**Telegram:** [RRR](https://t.me/microRustyme)
+## Geo-Restrictions
 
----
+Polymarket blocks US IP addresses for order placement. The recommended architecture:
 
-⭐ If this project helps you, please **Star** and **Fork** the repo!  
+- **Bot server (us-east-1)**: Low-latency WebSocket connection for price monitoring
+- **Proxy server (ca-central-1 Montreal)**: SOCKS5 proxy for order placement
+
+Configure the proxy in your `.env`:
+```bash
+SOCKS5_PROXY_HOST=your-proxy-ip
+SOCKS5_PROXY_PORT=1080
+SOCKS5_PROXY_USER=rarb
+SOCKS5_PROXY_PASS=your-password
+```
+
+See `infra/` for OpenTofu + Ansible deployment scripts.
+
+## Documentation
+
+See [PRD.md](PRD.md) for full product requirements and technical architecture.
+
+## License
+
+MIT
