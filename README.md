@@ -36,8 +36,8 @@ If **YES price + NO price < $1.00**, both sides can be bought to guarantee profi
 
 ```bash
 # Clone
-git clone https://github.com/m4rcu5o/polymarket-trading-bot.git
-cd rarb
+git clone https://github.com/metaggdev/polymarket-trading-bot.git
+cd polymarket-trading-bot
 
 # Install dependencies
 pip install -e .
