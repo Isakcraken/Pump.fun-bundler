@@ -1,6 +1,6 @@
 # Polymarket Arbitrage Bot (YES/NO Risk-Free Arbitrage)
 
-A **high-performance Polymarket Arbitrage Bot** built with **Python** that automatically detects and exploits **risk-free YES/NO arbitrage opportunities** on Polymarket markets when the combined prices fall below $1.00.
+A professional TypeScript-based trading bot for Polymarket with full credential management, order execution, market analysis, and automated arbitrage trading capabilities.
 
 This repository is optimized for developers, quantitative traders, and researchers looking to understand or deploy **Polymarket arbitrage strategies** with configurable thresholds, fast market scanning, and clean architecture.
 
