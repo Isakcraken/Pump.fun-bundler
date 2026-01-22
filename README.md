@@ -1,4 +1,4 @@
-# Polymarket Arbitrage Bot (YES/NO Risk-Free Arbitrage)
+# Polymarket Trading Bot (YES/NO Risk-Free Arbitrage)
 
 A professional TypeScript-based trading bot for Polymarket with full credential management, order execution, market analysis, and automated arbitrage trading capabilities.
 
