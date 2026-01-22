@@ -1,6 +1,6 @@
 # Polymarket Trading Bot (YES/NO Risk-Free Arbitrage)
 
-A professional TypeScript-based trading bot for Polymarket with full credential management, order execution, market analysis, and automated arbitrage trading capabilities.
+A professional Python-based trading bot for Polymarket with full credential management, order execution, market analysis, and automated arbitrage trading capabilities.
 
 This repository is optimized for developers, quantitative traders, and researchers looking to understand or deploy **Polymarket arbitrage strategies** with configurable thresholds, fast market scanning, and clean architecture.
 
